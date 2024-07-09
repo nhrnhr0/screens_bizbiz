@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Backend: Python: Django",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\backend\\manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "autoStartBrowser": false,
+            "cwd": "${workspaceFolder}\\backend",
+        },
+        {
+            "name": "Frontend: npm run dev",
+            "command": "npm run dev",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}\\frontend",
+
+        },
+    ],
+    "compounds": [
+    {
+      "name": "Server + Client",
+      "configurations": ["Backend: Python: Django", "Frontend: npm run dev"],
+      "stopAll": true
+    }
+  ]
+}
